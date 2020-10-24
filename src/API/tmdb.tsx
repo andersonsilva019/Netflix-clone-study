@@ -1,4 +1,5 @@
 import { IMovieData } from "~/components/MovieList/MovieRow";
+import { IThubmnailProps } from "~/components/ThumbnailMovie";
 
 export const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -61,6 +62,25 @@ export default {
         items: await basicFetch(`/discover/movie?with_genres=99&language=${language}&api_key=${API_KEY}`)
       }
     ]
+  },
+  getMovieDetails: async (movieId: number, typeMovie: string): Promise<IThubmnailProps> => {
+    let detail = {}
+
+    if (movieId) {
+      switch (typeMovie) {
+        case 'movie':
+          detail = await basicFetch(`/movie/${movieId}?language=${language}&api_key=${API_KEY}`)
+          break;
+        case 'tv':
+          detail = await basicFetch(`/tv/${movieId}?language=${language}&api_key=${API_KEY}`)
+          break;
+        default:
+          detail = null
+          break;
+      }
+    }
+
+    return detail as IThubmnailProps
   }
 }
 
