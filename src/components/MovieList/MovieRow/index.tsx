@@ -2,6 +2,7 @@ import * as S from './styles';
 
 
 export interface IMovieData {
+  id: number
   original_name: string;
   name: string;
   poster_path: string
