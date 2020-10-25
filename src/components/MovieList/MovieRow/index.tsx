@@ -29,7 +29,7 @@ export default function Movie({ title, items }: IMovieProps) {
   }
   const handleRightArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 2)
-    const widthList = items.results.length * 200
+    const widthList = items?.results?.length * 200
     if ((window.innerWidth - widthList) > x) {
       x = (window.innerWidth - widthList) - 60
     }
@@ -50,10 +50,10 @@ export default function Movie({ title, items }: IMovieProps) {
 
 
       <S.MovieListArea>
-        <S.MovieList style={{ marginLeft: scrollX, width: items.results.length * 300 }}>
-          {items.results.length > 0 && items.results.map((item, key) => (
-            <S.Item key={key}>
-              <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.name} />
+        <S.MovieList style={{ marginLeft: scrollX, width: items?.results?.length * 300 }}>
+          {items?.results?.length > 0 && items?.results?.map((item, key) => (
+            <S.Item key={key} href={`http://localhost:3000/movie-details/${item?.id}`}>
+              <img src={`https://image.tmdb.org/t/p/w300${item?.poster_path}`} alt={item?.name} />
             </S.Item>
           ))}
         </S.MovieList>

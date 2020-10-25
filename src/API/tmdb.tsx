@@ -2,7 +2,7 @@ import { IMovieData } from "~/components/MovieList/MovieRow";
 import { IThubmnailProps } from "~/components/ThumbnailMovie";
 
 export const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-const BASE_URL = 'https://api.themoviedb.org/3';
+export const BASE_URL = 'https://api.themoviedb.org/3';
 export const language = 'pt-BR'
 
 export interface IGetHomeListResponse {

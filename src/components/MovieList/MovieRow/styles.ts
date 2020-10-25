@@ -51,7 +51,7 @@ export const MovieList = styled.div`
   transition: all ease 0.5s;
 `;
 
-export const Item = styled.div`
+export const Item = styled.a`
   width: 200px;
   display: inline-block;
   cursor: pointer;
