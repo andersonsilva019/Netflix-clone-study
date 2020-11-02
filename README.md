@@ -30,9 +30,8 @@
   <!-- <img alt="GitHub" src="https://img.shields.io/github/license/lukemorales/bancointer.svg"> -->
 </p>
 
-
 <p align="center">
-  <a href="#rocket-technologies">Tecnologias</a>
+  <a href="#rocket-tecnologias">Tecnologias</a>
 </p>
 
 <img src="https://res.cloudinary.com/drsxhihfr/image/upload/v1604360197/images/Google_Chrome_-_Dark_bplogb.svg">
