@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img width=400 alt="GoBarber API" src="https://res.cloudinary.com/drsxhihfr/image/upload/v1604360287/images/netflix_vv5ibp.png" />
+    <img width=400 alt="netflix" src="https://res.cloudinary.com/drsxhihfr/image/upload/v1604360287/images/netflix_vv5ibp.png" />
     <br>
     Filmes, séries e muito mais.
 </h1>
