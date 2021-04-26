@@ -27,7 +27,6 @@
     <img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/andersonsilva019/Netflix-clone-study">
   </a>
 
-  <!-- <img alt="GitHub" src="https://img.shields.io/github/license/lukemorales/bancointer.svg"> -->
 </p>
 
 <p align="center">
