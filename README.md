@@ -48,6 +48,10 @@ Esse projeto tem por finalidade utilizar [Nextjs]('https://nextjs.org/') consumi
 
 ## :wrench: Melhorando a performance da aplicação
 
+### [ x ] Evitando novas requisições ao servidor para buscar os filmes
+
+O Redux toolkit possui um middleware que permite que o estado seja atualizado de forma assíncrona. Além disso, tem uma feature que permite cachear os dados do servidor que se chama RTK Query. Na própria documentação existe uma seção que compara com outras ferramenta de cache em requisições para o servidor.
+
 ### [ x ] Evitando renderizações desnecessários
 
 Toda vez que o background do header alterava de cor, todas as listas da página inicial eram renderizadas novamente.
