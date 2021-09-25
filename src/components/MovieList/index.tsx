@@ -3,25 +3,25 @@ import { IMovie } from '~/app/services/movies';
 import * as S from './styles';
 
 export interface IMovieList {
-  originalNetflix: IMovie
-  trending: IMovie
-  topRated: IMovie
-  action: IMovie
-  comedy: IMovie
-  horror: IMovie
-  romance: IMovie
-  documentary: IMovie
+  originalNetflix?: IMovie
+  trending?: IMovie
+  topRated?: IMovie
+  action?: IMovie
+  comedy?: IMovie
+  horror?: IMovie
+  romance?: IMovie
+  documentary?: IMovie
 }
 
 export default function MovieList({
-  originalNetflix,
-  trending,
-  topRated,
-  action,
-  comedy,
-  horror,
-  romance,
-  documentary
+  originalNetflix = { results: [] },
+  trending = { results: [] },
+  topRated = { results: [] },
+  action = { results: [] },
+  comedy = { results: [] },
+  horror = { results: [] },
+  romance = { results: [] },
+  documentary = { results: [] },
 }: IMovieList) {
 
   return (

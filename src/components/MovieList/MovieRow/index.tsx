@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
 
 
@@ -15,8 +15,7 @@ interface IMovieProps {
   title: string;
   items: { results: IMovieData[] }
 }
-
-export default function Movie({ title, items }: IMovieProps) {
+function MovieComponent({ title, items }: IMovieProps) {
 
   const [scrollX, setScrollX] = useState(-1200)
 
@@ -64,3 +63,7 @@ export default function Movie({ title, items }: IMovieProps) {
     </S.Container>
   )
 }
+
+const Movie = React.memo(MovieComponent)
+
+export default Movie
