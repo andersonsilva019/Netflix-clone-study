@@ -1,6 +1,7 @@
-import * as S from './styles';
+import Link from 'next/link'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 import { useState } from 'react';
+import * as S from './styles';
 
 
 export interface IMovieData {
@@ -51,10 +52,12 @@ export default function Movie({ title, items }: IMovieProps) {
 
       <S.MovieListArea>
         <S.MovieList style={{ marginLeft: scrollX, width: items?.results?.length * 300 }}>
-          {items?.results?.length > 0 && items?.results?.map((item, key) => (
-            <S.Item key={key} href={`http://localhost:3000/movie-details/${item?.id}`}>
-              <img src={`https://image.tmdb.org/t/p/w300${item?.poster_path}`} alt={item?.name} />
-            </S.Item>
+          {items?.results?.length > 0 && items?.results?.map(item => (
+            <Link key={item?.id} href={`http://localhost:3000/movie-details/${item?.id}`} passHref>
+              <S.Item title={item?.name || item?.original_name}>
+                <img src={`https://image.tmdb.org/t/p/w300${item?.poster_path}`} alt={item?.original_name} />
+              </S.Item>
+            </Link>
           ))}
         </S.MovieList>
       </S.MovieListArea>

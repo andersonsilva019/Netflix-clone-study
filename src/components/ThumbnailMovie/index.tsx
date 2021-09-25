@@ -1,44 +1,38 @@
 import * as S from './styles';
 import { MdPlayArrow } from 'react-icons/md'
+import { useFetchMovieDetailsQuery } from '~/app/services/movies';
 export interface IThubmnailProps {
-  items: {
-    id: number
-    number_of_seasons: number
-    original_name: string
-    backdrop_path: string
-    vote_average: number
-    overview: string
-    first_air_date: string
-    genres: Array<{ id: number, name: string }>
-  }
+  tvId: number
 }
 
-export default function ThumbnailMovie({ items }: IThubmnailProps) {
+export default function ThumbnailMovie({ tvId }: IThubmnailProps) {
 
-  const firstDate = new Date(items.first_air_date)
+  const { data } = useFetchMovieDetailsQuery(tvId)
+
+  const firstDate = new Date(data?.first_air_date)
   let genres = []
 
-  for (let i in items.genres) {
-    genres.push(items.genres[i].name)
+  for (let i in data?.genres) {
+    genres.push(data?.genres[i].name)
   }
 
   return (
-    <S.Container style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${items.backdrop_path})` }}>
+    <S.Container style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${data?.backdrop_path})` }}>
       <S.GradientVertical>
         <S.GradientHorizontal>
-          <h2>{items.original_name}</h2>
+          <h2>{data?.original_name}</h2>
           <S.Info>
-            <strong>{items.vote_average} pontos</strong>
+            <strong>{data?.vote_average} pontos</strong>
             <strong>{firstDate.getFullYear()}</strong>
-            <strong>{items.number_of_seasons} temporada{items.number_of_seasons > 1 ? 's' : ''}</strong>
+            <strong>{data?.number_of_seasons} temporada{data?.number_of_seasons > 1 ? 's' : ''}</strong>
           </S.Info>
-          <S.Description>{items.overview}</S.Description>
+          <S.Description>{data?.overview}</S.Description>
           <S.WrapperButton>
-            <a href={`/watch/${items.id}`}>
+            <a href={`/watch/${data?.id}`}>
               <MdPlayArrow size={20} color="#000" />
               Assistir
             </a>
-            <a href={`/list/add/${items.id}`}>+ Minha lista</a>
+            <a href={`/list/add/${data?.id}`}>+ Minha lista</a>
           </S.WrapperButton>
           <strong>Gêneros: <span>{genres.join(', ')}</span></strong>
         </S.GradientHorizontal>
