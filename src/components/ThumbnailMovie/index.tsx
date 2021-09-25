@@ -2,10 +2,14 @@ import * as S from './styles';
 import { MdPlayArrow } from 'react-icons/md'
 import { useFetchMovieDetailsQuery } from '~/app/services/movies';
 export interface IThubmnailProps {
-  tvId: number
+  tvId?: number
 }
 
 export default function ThumbnailMovie({ tvId }: IThubmnailProps) {
+
+  if (tvId === null) {
+    return null
+  }
 
   const { data } = useFetchMovieDetailsQuery(tvId)
 
