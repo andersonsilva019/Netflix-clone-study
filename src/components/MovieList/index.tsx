@@ -26,14 +26,14 @@ export default function MovieList({
 
   return (
     <S.Container>
-      <Movie title="Originais da netflix" items={originalNetflix} />
-      <Movie title="Recomendados para você" items={trending} />
-      <Movie title="Em alta" items={topRated} />
-      <Movie title="Ação" items={action} />
-      <Movie title="Comédia" items={comedy} />
-      <Movie title="Terror" items={horror} />
-      <Movie title="Romance" items={romance} />
-      <Movie title="Documentário" items={documentary} />
+      {originalNetflix.results.length > 0 && <Movie title="Originais da netflix" items={originalNetflix} />}
+      {trending.results.length > 0 && <Movie title="Recomendados para você" items={trending} />}
+      {topRated.results.length > 0 && <Movie title="Em alta" items={topRated} />}
+      {action.results.length > 0 && <Movie title="Ação" items={action} />}
+      {comedy.results.length > 0 && <Movie title="Comédia" items={comedy} />}
+      {horror.results.length > 0 && <Movie title="Terror" items={horror} />}
+      {romance.results.length > 0 && <Movie title="Romance" items={romance} />}
+      {documentary.results.length > 0 && <Movie title="Documentário" items={documentary} />}
     </S.Container>
   )
 }
