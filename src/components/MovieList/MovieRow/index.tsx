@@ -17,7 +17,7 @@ interface IMovieProps {
 }
 function MovieComponent({ title, items }: IMovieProps) {
 
-  const [scrollX, setScrollX] = useState(-1200)
+  const [scrollX, setScrollX] = useState(0)
 
   const handleLeftArrow = () => {
     let x = scrollX + Math.round(window.innerWidth / 2)

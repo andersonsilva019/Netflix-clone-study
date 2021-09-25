@@ -10,6 +10,7 @@ import {
   useFetchMovieOfDocumentaryQuery,
   useFetchMovieOfHorrorQuery,
   useFetchMovieOfRomanceQuery,
+  useFetchMovieOfWarQuery,
   useFetchMoviesNetflixQuery,
   useFetchMoviesTopRatedQuery,
   useFetchMoviesTrendingQuery
@@ -30,6 +31,7 @@ export default function Home() {
   const { data: horror } = useFetchMovieOfHorrorQuery()
   const { data: romance } = useFetchMovieOfRomanceQuery()
   const { data: documentary } = useFetchMovieOfDocumentaryQuery()
+  const { data: war } = useFetchMovieOfWarQuery()
 
   useEffect(() => {
     const scrollListener = () => {
@@ -69,6 +71,7 @@ export default function Home() {
         horror={horror}
         romance={romance}
         documentary={documentary}
+        war={war}
       />
       <Footer />
     </S.Container>

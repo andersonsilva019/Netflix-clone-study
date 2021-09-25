@@ -11,6 +11,7 @@ export interface IMovieList {
   horror?: IMovie
   romance?: IMovie
   documentary?: IMovie
+  war?: IMovie
 }
 
 export default function MovieList({
@@ -22,6 +23,7 @@ export default function MovieList({
   horror = { results: [] },
   romance = { results: [] },
   documentary = { results: [] },
+  war = { results: [] }
 }: IMovieList) {
 
   return (
@@ -34,6 +36,7 @@ export default function MovieList({
       {horror.results.length > 0 && <Movie title="Terror" items={horror} />}
       {romance.results.length > 0 && <Movie title="Romance" items={romance} />}
       {documentary.results.length > 0 && <Movie title="Documentário" items={documentary} />}
+      {war.results.length > 0 && <Movie title="Guerra" items={war} />}
     </S.Container>
   )
 }

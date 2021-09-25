@@ -68,6 +68,11 @@ export const tmdbApi = createApi({
         query() {
           return `/discover/movie?with_genres=99&language=pt-BR&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
         }
+      }),
+      fetchMovieOfWar: builder.query<IMovie, number | void>({
+        query() {
+          return `/discover/movie?with_genres=10752&language=pt-BR&api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+        }
       })
     }
   }
@@ -82,5 +87,6 @@ export const {
   useFetchMovieOfComedyQuery,
   useFetchMovieOfHorrorQuery,
   useFetchMovieOfRomanceQuery,
-  useFetchMovieOfDocumentaryQuery
+  useFetchMovieOfDocumentaryQuery,
+  useFetchMovieOfWarQuery
 } = tmdbApi
