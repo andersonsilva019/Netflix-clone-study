@@ -43,5 +43,19 @@ Esse projeto tem por finalidade utilizar [Nextjs]('https://nextjs.org/') consumi
 - [Nextjs](https://nextjs.org/)
 - [typescript]('https://www.typescriptlang.org/')
 - [styled-components]('https://styled-components.com/')
-- [SWR]('https://swr.vercel.app/')
+- [Redux-toolkit]('https://redux-toolkit.js.org/')
+- [React-redux](https://react-redux.js.org/)
 
+## :wrench: Melhorando a performance da aplicação
+
+### [ x ] Evitando renderizações desnecessários
+
+Toda vez que o background do header alterava de cor, todas as listas da página inicial eram renderizadas novamente.
+
+Antes de utilizar o `React.memo` o tempo de renderização da página home foi de **61.6ms**. Podemos obervar na imagem abaixo.
+
+<img alt="Before react.memo" src="https://res.cloudinary.com/drsxhihfr/image/upload/v1632577457/images/before-memo_azp0fw.png"/>
+
+Depois de utilizar o `React.memo` o tempo de renderização da página home foi de **5.1ms**. Podemos obervar na imagem abaixo.
+
+<img alt="Before react.memo" src="https://res.cloudinary.com/drsxhihfr/image/upload/v1632577457/images/after-memo_vdbnwi.png"/>
