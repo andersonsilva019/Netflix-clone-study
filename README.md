@@ -52,7 +52,7 @@ Esse projeto tem por finalidade utilizar [Nextjs]('https://nextjs.org/') consumi
 
 O Redux toolkit possui um middleware que permite que o estado seja atualizado de forma assíncrona. Além disso, tem uma feature que permite cachear os dados do servidor que se chama RTK Query. Na própria documentação existe uma seção que compara com outras ferramenta de cache em requisições para o servidor.
 
-### [ x ] Evitando renderizações desnecessários
+### [ x ] Evitando renderizações desnecessárias
 
 Toda vez que o background do header alterava de cor, todas as listas da página inicial eram renderizadas novamente.
 
